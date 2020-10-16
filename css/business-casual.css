@@ -27,6 +27,16 @@ p {
   line-height: 1.75;
 }
 
+.watermark {
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  top: 0;
+  width: 200px;
+  height: auto;
+  transform: rotate(-5deg);
+}
+
 .text-faded {
   color: rgba(255, 255, 255, 0.3);
 }
