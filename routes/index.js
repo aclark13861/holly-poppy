@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const ctrl = require('../controllers/todos')
+const ctrl = require('../controllers/pop')
 
 router.get('/', function(req, res, next) {
   res.render('home', { title: 'Home page' });
