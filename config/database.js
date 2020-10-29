@@ -1,29 +1,12 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/hollyDB', 
-{useNewUrlParser: true, useCreateIndex: true});
+mongoose.connect('mongodb+srv://aclark13861:Jeremy_1@business-cluster.apkap.mongodb.net/HollyPoppyDB?retryWrites=true&w=majority', 
+{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
+
 
 db.on('connected', function() {
   console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
 });
 
-
-
-
-
-
-
-
-const todos = [
-    {todo: 'Feed Dogs', done: true},
-    {todo: 'Learn Express', done: false},
-    {todo: 'Buy Milk', done: false}
-  ];
-  
-  module.exports = {
-    getAll: function() {
-      return todos;
-    }
-  };
