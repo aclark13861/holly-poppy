@@ -6,8 +6,7 @@ module.exports = {
     newForm,
     create,
     home,
-    showMap,
-    users,
+    showMap
   };
 
 function home(req, res) {
@@ -30,7 +29,7 @@ function create(req, res) {
   const poppy = new Poppy(req.body);
   poppy.save(function(err) {
     if (err) { return err } else {
-    res.json(req.body);
+    res.render('home');
     console.log(poppy);
     }
   });
@@ -39,11 +38,3 @@ function create(req, res) {
 function showMap(req, res) {
   res.render('map')
 }
-
-function users(req, res) {
-  let query = Poppy.find({});
-  query.exec(function(err, users){
-      if(err) res.send(err);
-      res.json(users)
-  });
-};

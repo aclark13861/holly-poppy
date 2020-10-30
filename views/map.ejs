@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"></html>>
 <head>
+  <script defer type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9kwAzjdLHLvRHUg-jODbNoy8HYaSR6EY&callback=initMap">
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poppy Map</title>
@@ -17,15 +20,22 @@ function codeAddress(geocoder, map) {
 geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
         map.setCenter(results[0].geometry.location);
+        console.log(results);
         var marker = new google.maps.Marker({
             map: map,
-            position: results[0].geometry.location
+            position: results[0].geometry.location,
         });
+    let infoWindow = new google.maps.InfoWindow({
+        content: '<h1>Denver, CO</h1>'
+    });
+    marker.addListener('click', function() {
+        infoWindow.open(map, marker);
+    });
     } else {
         alert('Geocode was not succesful for the following reason: ' + status);
         }
     });
-}    
+}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -34,11 +44,21 @@ function initMap() {
   });
     geocoder = new google.maps.Geocoder();
     codeAddress(geocoder, map);
+
+  function addMarker(coords){
+    var marker = new google.maps.Marker({
+        map: map,
+        position: coords,
+    });
+  }
+
+let markers = [{lat: 39.7532, lng: -105.0001}]
+
+for (var i=0;i < markers.length; i++){
+  addMarker(markers[i]);
+  }
 }
 
-</script>
-    <script defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9kwAzjdLHLvRHUg-jODbNoy8HYaSR6EY&callback=initMap">
 </script>
 <style>
     #map {
