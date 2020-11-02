@@ -1,6 +1,6 @@
 body {
   @include body-font;
-  background-image: linear-gradient(rgba(208, 153, 226, 0.65), rgba(208, 153, 226, 0.5)), url('../public/img/poppy.jpg');
+  background-image: linear-gradient(rgba(208, 153, 226, 0.65), rgba(208, 153, 226, 0.5)), url('/img/poppy.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
