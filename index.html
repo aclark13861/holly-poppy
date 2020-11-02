@@ -28,7 +28,22 @@
 
 <body>
 
-  <img class="watermark" src="img/Asset%203.png">
+  <img class="watermark" src="public/img/Asset%203.png">
+
+  <div class="menu">
+    <button class="nav-tgl" type="button" aria-label="toggle menu">
+      <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
+    </button>
+    <nav class="nav">
+      <!-- I don't care about the menu elements here so I will hide them-->
+      <ul class="navLinks">
+        <li><a href="about.html">About Us</a></li>
+        <li>element two</li>
+        <li>element three</li>
+        <li>element four</li>
+      </ul>
+    </nav>
+  </div>
 
   <h1 class="site-heading text-center text-white d-none d-lg-block">
     <!-- <span class="site-heading-upper text-primary mb-3">Holly Poppy</span> -->
@@ -70,7 +85,7 @@
         <iframe class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12277.883117551224!2d-104.9964469!3d39.7066015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1602537155082!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         <div class="intro-text left-0 text-center p-5 rounded">
           <h2 class="section-heading mb-4">
-            <span class="section-heading-upper">What's Poppin</span>
+            <span class="section-heading-upper hero-title">What's Poppin</span>
             <!-- <span class="section-heading-lower">Brand New Whip Just Hopped In</span> -->
           </h2>
           <p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!
@@ -89,8 +104,8 @@
         <div class="col-xl-9 mx-auto">
           <div class="cta-inner text-center rounded">
             <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Our Mission</span>
-              <span class="section-heading-lower">To You</span>
+              <!-- <span class="section-heading-upper">Our Mission</span> -->
+              <span class="section-heading-lower">Our Mission</span>
             </h2>
             <p class="mb-0">When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
           </div>
@@ -108,6 +123,14 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    const menu = document.querySelector('.menu');
+
+    const btn = menu.querySelector('.nav-tgl');
+    btn.addEventListener('click', evt => {
+      menu.classList.toggle('active');
+    })
+  </script>
 
 </body>
 

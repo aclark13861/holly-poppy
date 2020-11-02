@@ -4,25 +4,37 @@
     .intro-img {
       width: 75%;
       float: right;
-      height: 500px;
+      height: 450px;
+      margin-top: -50px;
+      border: 2px!important;
+      border-style: solid!important;
+      
     }
     .intro-text {
-      left: 0;
-      width: 30%;
-      margin-top: 3rem;
+      left: -50px;
+      width: 33%;
+      margin-top: -85px;
+      /*margin-top: 3rem;*/
       position: absolute;
-      background: #fff;
+      /*background: #fff;*/
+      p{
+        text-align: left;
+      }
       .intro-button {
-        width: 100%;
-        left: 0;
+       width: 100%;
+        left: -52px;
         position: absolute;
         bottom: -2rem;
+       /*background: #000!important;*/
+       a{
+        background: #000!important;
+       }
       }
     }
   }
   @media (min-width: 1200px) {
     .intro-text {
-      width: 45%;
+      /*width: 45%;*/
     }
   }
 }
