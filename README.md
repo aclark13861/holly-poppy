@@ -2,12 +2,6 @@
 
 Holly Poppy is a marketing platform aimed at increasing recognition for local and small businesses.
 
-## Preview
-
-[![Business Casual Preview](https://startbootstrap.com/assets/img/screenshots/themes/business-casual.png)](https://startbootstrap.github.io/startbootstrap-business-casual/)
-
-**[View Live Preview](https://startbootstrap.github.io/startbootstrap-business-casual/)**
-
 ## Status
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-business-casual/master/LICENSE)
