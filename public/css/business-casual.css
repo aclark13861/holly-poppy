@@ -1,12 +1,10 @@
-/*!
- * Start Bootstrap - Business Casual v5.0.10 (https://startbootstrap.com/themes/business-casual)
- * Copyright 2013-2020 Start Bootstrap
- * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-business-casual/blob/master/LICENSE)
- */
-
 body {
-  font-family: 'Lora';
-  background-image: linear-gradient(rgba(208, 153, 226, 0.65), rgba(208, 153, 226, 0.5)), url("../img/poppy.jpg");
+  font-family: "Lora";
+  background-image: linear-gradient(
+      rgba(208, 153, 226, 0.65),
+      rgba(208, 153, 226, 0.5)
+    ),
+    url("../img/poppy.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -96,7 +94,7 @@ p {
 }
 
 #mainNav .navbar-brand {
-  color: #CCDCFD;
+  color: #ccdcfd;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -105,7 +103,7 @@ p {
 }
 
 #mainNav .navbar-nav .nav-item.active .nav-link {
-  color: #CCDCFD;
+  color: #ccdcfd;
 }
 
 @media (min-width: 992px) {
@@ -116,7 +114,7 @@ p {
     color: rgba(255, 255, 255, 0.4);
   }
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
-    color: #CCDCFD;
+    color: #ccdcfd;
   }
 }
 
@@ -175,7 +173,7 @@ p {
 
 .cta .cta-inner:before {
   border-radius: 0.5rem;
-  content: '';
+  content: "";
   position: absolute;
   top: -0.5rem;
   bottom: -0.5rem;
@@ -222,14 +220,14 @@ p {
 
 .list-hours .list-hours-item {
   border-bottom: 1px solid rgba(204, 220, 253, 0.5);
-  padding-bottom: .25rem;
+  padding-bottom: 0.25rem;
   margin-bottom: 1rem;
   font-style: italic;
 }
 
 .list-hours .list-hours-item.today {
   font-weight: bold;
-  color: #CCDCFD;
+  color: #ccdcfd;
 }
 
 @media (min-width: 992px) {
@@ -248,11 +246,11 @@ p {
 }
 
 .text-primary {
-  color: #CCDCFD !important;
+  color: #ccdcfd !important;
 }
 
 .bg-primary {
-  background-color: #CCDCFD !important;
+  background-color: #ccdcfd !important;
 }
 
 .btn {
@@ -260,11 +258,13 @@ p {
 }
 
 .btn-primary {
-  background-color: #CCDCFD;
-  border-color: #CCDCFD;
+  background-color: #ccdcfd;
+  border-color: #ccdcfd;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
   background-color: #9bbafb;
   border-color: #9bbafb;
 }
