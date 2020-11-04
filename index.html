@@ -1,8 +1,8 @@
-  
 <!DOCTYPE html>
 <html lang="en">
-<script defer src="/jquery/main.js"></script>
+
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -11,14 +11,14 @@
   <title>Holly Poppy</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="/css/business-casual.min.css" rel="stylesheet">
+  <link href="css/business-casual.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://use.typekit.net/cuc8dfh.css">
   <link rel="stylesheet" href="https://use.typekit.net/cuc8dfh.css">
@@ -28,23 +28,7 @@
 
 <body>
 
-  <img class="watermark" src="/img/Asset%203.png">
-
-  <div class="menu">
-    <button class="nav-tgl" type="button" aria-label="toggle menu">
-      <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
-    </button>
-    <nav class="nav">
-      <!-- I don't care about the menu elements here so I will hide them-->
-      <ul class="navLinks">
-        <li><a href="/">Home</a></li>
-        <li><a href="/map">Map</a></li>
-        <li><a href="about.ejs">About Us</a></li>
-        <li><a href="events.ejs">Events</a></li>
-        <li><a href="contact.ejs">Map</a></li>
-      </ul>
-    </nav>
-  </div>
+  <img class="watermark" src="public/img/Asset%203.png">
 
   <div class="menu">
     <button class="nav-tgl" type="button" aria-label="toggle menu">
@@ -66,12 +50,39 @@
     <span class="site-heading-lower">Holly Poppy</span>
   </h1>
 
+  <!-- Navigation -->
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Holly Poppy</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="products.html">Poppies</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="store.html">Map</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
 
   <section class="page-section clearfix">
     <div class="container">
       <div class="intro">
         <!-- <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/intro.jpg" alt=""> -->
-        <iframe class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="/map" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="500" height="500"></iframe>
+        <iframe class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12277.883117551224!2d-104.9964469!3d39.7066015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1602537155082!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         <div class="intro-text left-0 text-center p-5 rounded">
           <h2 class="section-heading mb-4">
             <span class="section-heading-upper hero-title">What's Poppin</span>
@@ -110,9 +121,17 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="/jquery/jquery.min.js"></script>
-  <script src="/jquery/jquery.js"xs></script>
-  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    const menu = document.querySelector('.menu');
+
+    const btn = menu.querySelector('.nav-tgl');
+    btn.addEventListener('click', evt => {
+      menu.classList.toggle('active');
+    })
+  </script>
+
 </body>
 
 </html>
