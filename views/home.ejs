@@ -24,46 +24,40 @@
   <link rel="stylesheet" href="https://use.typekit.net/cuc8dfh.css">
   <link rel="stylesheet" href="https://use.typekit.net/cuc8dfh.css">
 
+  <!-- animate css -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
 </head>
 
 <body>
 
   <img class="watermark" src="/img/Asset%203.png">
 
+
+  <!-- Navigation -->
   <div class="menu">
     <button class="nav-tgl" type="button" aria-label="toggle menu">
       <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
     </button>
     <nav class="nav">
       <!-- I don't care about the menu elements here so I will hide them-->
+
       <ul class="navLinks">
         <li><a href="/">Home</a></li>
         <li><a href="/map">Map</a></li>
-        <li><a href="about.ejs">About Us</a></li>
+        <li><a href="/about">About Us</a></li>
         <li><a href="events.ejs">Events</a></li>
-        <li><a href="contact.ejs">Map</a></li>
+        <li><a href="contact.ejs">Contact</a></li>
+        <img class="navLogo" src="/img/Asset%203.png">
       </ul>
     </nav>
   </div>
 
-  <div class="menu">
-    <button class="nav-tgl" type="button" aria-label="toggle menu">
-      <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
-    </button>
-    <nav class="nav">
-      <!-- I don't care about the menu elements here so I will hide them-->
-      <ul class="navLinks">
-        <li><a href="about.html">About Us</a></li>
-        <li>element two</li>
-        <li>element three</li>
-        <li>element four</li>
-      </ul>
-    </nav>
-  </div>
+ 
 
   <h1 class="site-heading text-center text-white d-none d-lg-block">
     <!-- <span class="site-heading-upper text-primary mb-3">Holly Poppy</span> -->
-    <span class="site-heading-lower">Holly Poppy</span>
+    <span class="site-heading-lower wow fadeIn">Holly Poppy</span>
   </h1>
 
 
@@ -74,7 +68,7 @@
         <iframe class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="/map" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="500" height="500"></iframe>
         <div class="intro-text left-0 text-center p-5 rounded">
           <h2 class="section-heading mb-4">
-            <span class="section-heading-upper hero-title">What's Poppin</span>
+            <span class="section-heading-upper hero-title wow fadeIn">What's Poppin</span>
             <!-- <span class="section-heading-lower">Brand New Whip Just Hopped In</span> -->
           </h2>
           <p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!
@@ -113,6 +107,14 @@
   <script src="/jquery/jquery.min.js"></script>
   <script src="/jquery/jquery.js"xs></script>
   <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+
+    new WOW().init();
+    
+});
+  </script>
 </body>
 
 </html>

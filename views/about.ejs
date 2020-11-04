@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<script defer src="/jquery/main.js"></script>
 <head>
 
   <meta charset="utf-8">
@@ -11,51 +11,44 @@
   <title>Holly Poppy</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/business-casual.min.css" rel="stylesheet">
+  <link href="/css/business-casual.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.typekit.net/cuc8dfh.css">
 
 </head>
 
 <body>
 
-  <h1 class="site-heading text-center text-white d-none d-lg-block">
-    <span class="site-heading-upper text-primary mb-3">A Free Bootstrap 4 Business Theme</span>
-    <span class="site-heading-lower">Business Casual</span>
-  </h1>
+    <!-- Navigation -->
+  <div class="menu">
+    <button class="nav-tgl" type="button" aria-label="toggle menu">
+      <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
+    </button>
+    <nav class="nav">
+      <!-- I don't care about the menu elements here so I will hide them-->
+      
+      <ul class="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/map">Map</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="events.ejs">Events</a></li>
+        <li><a href="contact.ejs">Contact</a></li>
+        <img class="navLogo" src="/img/Asset%203.png">
+      </ul>
+    </nav>
+  </div>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="index.html">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="store.html">Store</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <h1 class="site-heading text-center text-white d-none d-lg-block">
+    <!-- <span class="site-heading-upper text-primary mb-3">A Free Bootstrap 4 Business Theme</span> -->
+    <span class="site-heading-lower">About Us</span>
+  </h1>
 
   <section class="page-section about-heading">
     <div class="container">
@@ -65,8 +58,8 @@
           <div class="col-xl-9 col-lg-10 mx-auto">
             <div class="bg-faded rounded p-5">
               <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                <span class="section-heading-lower">About Our Cafe</span>
+                <span class="section-heading-upper">By the People, For the People</span>
+                <span class="section-heading-lower">Community</span>
               </h2>
               <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
               <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>

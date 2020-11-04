@@ -10,3 +10,8 @@ btn.forEach(button => {
 		menu.classList.toggle('active')
 	})
 })
+
+$(function() {
+  // Handler for .ready() called.
+
+});

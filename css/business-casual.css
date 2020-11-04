@@ -187,17 +187,19 @@ p {
 }
 
 .menu.active .navLinks {
-  visibility: visible;
-  display: block !important;
-  background: #fff;
-  position: fixed !important;
-  top: 35vh;
-  left: 40vw;
-  z-index: 999;
-  margin: 0 auto;
-  padding: 4rem;
-  height: 100;
-  transition: all 1000ms ease-in-out;
+    visibility: visible;
+    display: block!important;
+    background: #E8BFFB;
+    position: fixed!important;
+    top: 23vh;
+    left: 36vw;
+    z-index: 999;
+    margin: 0 auto;
+    padding-right: 8rem;
+    padding-top: 2rem;
+    padding-bottom: 7rem;
+    height: 100;
+    border-radius: 5px;
 }
 
 .menu.active .navLinks li {
