@@ -65,16 +65,20 @@
 
 // for the nav background (styling the nav itself is not our topic)
 .nav:before {
-  display: block;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  content: '';
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  transition: all 500ms ease-in-out;
+      visibility: visible;
+      display: block!important;
+      background: #fff;
+      position: fixed!important;
+      top: 25vh;
+      left: 38vw;
+      z-index: 999;
+      margin: 0 auto;
+      padding-right: 8rem;
+      padding-top: 2rem;
+      padding-bottom: 7rem;
+      height: 100;
+      transition: all 1s ease-in-out;
+  }
   
   // that's all the pen about
   clip-path: circle(30px at calc(10% - 65px) 65px);
@@ -94,18 +98,26 @@
 
     .navLinks {
       visibility: visible;
-      display: block!important;
-      background: #fff;
-      position: fixed!important;
-      top: 35vh;
-      left: 40vw;
-      z-index: 999;
-      margin: 0 auto;
-      padding: 4rem;
-      height: 100;
-      transition: all 1000ms ease-in-out;
+    display: block!important;
+    background: #E8BFFB;
+    position: fixed!important;
+    top: 23vh;
+    left: 36vw;
+    z-index: 999;
+    margin: 0 auto;
+    padding-right: 8rem;
+    padding-top: 2rem;
+    padding-bottom: 7rem;
+    height: 100;
+    border-radius: 5px;
+    transition: all 1s ease-in-out;
       li{
         list-style-type: none;
+        margin: 1rem;
+        a{
+          font-family: p22-klauss-kursiv, cursive;
+          font-size: 18px;
+        }
       }
   }
   
