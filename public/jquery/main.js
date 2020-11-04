@@ -15,3 +15,9 @@ $(function() {
   // Handler for .ready() called.
 
 });
+
+  $(document).ready(function() {
+
+    new WOW().init();
+    
+});
