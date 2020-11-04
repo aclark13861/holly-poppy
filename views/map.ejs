@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"></html>
 <head>
+  <%- include('partials/header') %>
   <script async defer type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9kwAzjdLHLvRHUg-jODbNoy8HYaSR6EY&callback=initMap">
 </script>
@@ -9,6 +10,21 @@
     <title>Poppy Map</title>
 </head>
 <body>
+  <div style="position:absolute; left:-500px;" class="menu">
+    <button style="position:absolute; left:1000px;" class="nav-tgl" type="button" aria-label="toggle menu">
+      <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
+    </button>
+    <nav class="nav">
+      <!-- I don't care about the menu elements here so I will hide them-->
+      <ul class="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/map">Map</a></li>
+        <li><a href="about.ejs">About Us</a></li>
+        <li><a href="events.ejs">Events</a></li>
+        <li><a href="contact.ejs">Map</a></li>
+      </ul>
+    </nav>
+  </div>
     <div id="map"></div>
 <script>
 var locations = [
