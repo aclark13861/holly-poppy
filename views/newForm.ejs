@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<%- include('partials/header') %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Person Form</title>
 </head>
+<script defer type="text/javascript">
+    var s ="";
+    while (s!= "hollypoppin") {
+    s=prompt("please enter your password");
+    if (s=="hollypoppin")
+    {}
+    else {
+	alert("Incorrect password-Try again");
+	}
+}
+    </script>
 <body>
     <h2>Want to be apart of Holly Poppy?</h2>
     <h3>Fill out the form below</h3>
@@ -30,13 +42,31 @@
 	<label>Zip Code:
 		<input type="number" name="Zip">
 	</label><br>
-	<label>
-		<input type="number" name="Phone">
+	<label>Phone Number:
+		<input type="tel" name="Phone">
 	</label><br>
 	<label>Website URL:
 		<input type="text" name="Website">
 	</label><br>
 	<button type="submit">Submit</button> 
 </form>
+<script defer type="text/javascript">
+    var s ="";
+    
+    while (s!= "hollypoppin")
+    {
+    s=prompt("please enter your password");
+    if (s=="hollypoppin")
+    {
+       return //page to redirect if password entered is correct
+    
+    }
+    else
+    {
+    alert("Incorrect password-Try again");
+    
+    }
+    }
+    </script>
 </body>
 </html>

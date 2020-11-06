@@ -1,8 +1,6 @@
 const Poppy = require('../models/poppy');
 const nodemailer = require('nodemailer');
 const url = require('url');
-const { getMaxListeners } = require('gulp');
-require('dotenv').config();
 
 module.exports = {
     about,
@@ -16,7 +14,8 @@ module.exports = {
     contact_error,
     contact,
     send,
-    frame
+    frame,
+    pass
 
   };
 
@@ -40,7 +39,7 @@ function create(req, res) {
   const poppy = new Poppy(req.body);
   poppy.save(function(err) {
     if (err) { return err } else {
-    res.json(req.body);
+    res.redirect('/');
     console.log(poppy);
     }
   });
@@ -116,4 +115,8 @@ function send(req, res) {
       }
     });
 }
+
+function pass(req, res) {
+  res.render('password')
+};
 

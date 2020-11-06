@@ -33,9 +33,6 @@ const personSchema = new Schema({
     },
     Phone: Number,
     Website: String,
-    created_at: {type: Date, default: Date.now},
-    updated_at: {type: Date, default: Date.now}
-
 }, {
     timestamps: true
 });
