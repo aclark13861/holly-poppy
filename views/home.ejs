@@ -2,34 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async defer type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnNY4Px8zfiDo3zWqujXBwJykMyHRoDw8&callback=initMap"></script>
   <%- include('partials/header') %>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Holly Poppy</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="/css/business-casual.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://use.typekit.net/cuc8dfh.css">
-  <link rel="stylesheet" href="https://use.typekit.net/cuc8dfh.css">
-  <link rel="stylesheet" href="https://use.typekit.net/cuc8dfh.css">
-
-  <!-- animate css -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
+  <style>
+  </style>
 </head>
-
 <body>
-
   <img class="watermark" src="/img/Asset%203.png">
 
 
@@ -62,7 +46,8 @@
     <div class="container">
       <div class="intro">
         <!-- <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/intro.jpg" alt=""> -->
-        <iframe class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="/map" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="500" height="500"></iframe>
+        <iframe class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="/frame" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="500" height="500"></iframe>
+        <div id="map"></div>
         <div class="intro-text left-0 text-center p-5 rounded">
           <h2 class="section-heading mb-4">
             <span class="section-heading-upper hero-title wow fadeIn">What's Poppin</span>
@@ -99,20 +84,6 @@
       <p class="m-0 small">Copyright &copy; Your Website 2020</p>
     </div>
   </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="/jquery/jquery.min.js"></script>
-  <script src="/jquery/jquery.js"xs></script>
-  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-  <script type="text/javascript">
-  $(document).ready(function() {
-
-    new WOW().init();
-    
-});
-  </script>
-</body>
-
+</body> 
 </html>
 

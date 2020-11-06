@@ -11,6 +11,7 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "del": "^6.0.0",
+    "dotenv": "^8.2.0",
     "ejs": "^2.6.2",
     "express": "^4.16.4",
     "gulp": "^4.0.2",
@@ -23,7 +24,9 @@
     "http-errors": "~1.6.3",
     "merge-stream": "^2.0.0",
     "mongoose": "^5.10.9",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "nodemailer": "^6.4.14",
+    "popper": "^1.0.1"
   },
   "description": "[Business Casual](https://startbootstrap.com/themes/business-casual/) is a multipurpose website theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a landing page, about page, blog page, and a contact page along with various custom styles and components.",
   "main": "server.js",

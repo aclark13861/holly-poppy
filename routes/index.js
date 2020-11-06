@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Person = require('../models/poppy.js')
 
+
 const ctrl = require('../controllers/pop')
 
 router.get('/users', ctrl.users);
@@ -18,6 +19,14 @@ router.post('/users', ctrl.create);
 
 router.get('/map', ctrl.showMap);
 
+router.get('/contact_send', ctrl.contact_send);
+    
+router.get('/contact_error', ctrl.contact_error);
+    
+router.get('/contact', ctrl.contact);
+  
+router.post('/send', ctrl.send);
 
-
+router.get('/frame', ctrl.frame);
+    
 module.exports = router;
