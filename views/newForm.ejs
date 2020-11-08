@@ -43,30 +43,12 @@
 		<input type="number" name="Zip">
 	</label><br>
 	<label>Phone Number:
-		<input type="tel" name="Phone">
-	</label><br>
+		<input type="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="Phone">
+	</label><small>Format: 3034567890</small><br>
 	<label>Website URL:
 		<input type="text" name="Website">
 	</label><br>
 	<button type="submit">Submit</button> 
 </form>
-<script defer type="text/javascript">
-    var s ="";
-    
-    while (s!= "hollypoppin")
-    {
-    s=prompt("please enter your password");
-    if (s=="hollypoppin")
-    {
-       return //page to redirect if password entered is correct
-    
-    }
-    else
-    {
-    alert("Incorrect password-Try again");
-    
-    }
-    }
-    </script>
 </body>
 </html>

@@ -21,4 +21,3 @@ $(function() {
     new WOW().init();
     
 });
-

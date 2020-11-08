@@ -7,6 +7,8 @@
     <title>Poppy Map</title>
 </head>
 <body>
+    <script async defer type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnNY4Px8zfiDo3zWqujXBwJykMyHRoDw8&callback=initMap"></script>
     <div id="map"></div>
 <style>
     #map {
@@ -18,8 +20,8 @@
       padding: 0;
     }
   </style>
-  <script defer type="text/javascript">
-      var locations = [
+  <script>
+         var locations = [
     ['Jovai Concepts', '5045 W 1st Ave, Denver', 'http://www.jovialconcepts.org'],
     ['City Floral', '1440 Kearney St, Denver', 'http://www.cityfloralgreenhouse.com'],
     ['Skypilot Farm', '10384 Airport Rd, Longmont', 'http://www.skypilotfarm.com'],
@@ -27,6 +29,7 @@
     ['Shrinkle Chic Boutique', '8377 W. Morraine Littleton', ''],
     ['Susan Loves William', '6851 S Gaylord St, Centennial', 'http://www.susanloveswilliam.com']
   ];
+  
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
@@ -75,7 +78,5 @@ function createMarker(latlng,html){
 }
 }
   </script>
-  <script async="false" type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnNY4Px8zfiDo3zWqujXBwJykMyHRoDw8&callback=initMap"></script>
 </body>
 </html>

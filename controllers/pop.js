@@ -1,6 +1,6 @@
 const Poppy = require('../models/poppy');
 const nodemailer = require('nodemailer');
-const url = require('url');
+var data = require('../public/javascripts/data')
 
 module.exports = {
     about,
@@ -40,13 +40,19 @@ function create(req, res) {
   poppy.save(function(err) {
     if (err) { return err } else {
     res.redirect('/');
-    console.log(poppy);
     }
   });
 }
 
 function showMap(req, res) {
-  res.render('map')
+  Poppy.find({}, function(err, users) {
+    if(err){
+      console.log(err)
+    }
+    else{
+      res.render('map', {users: users})
+    }
+  })
 };
 
 function frame(req, res) {
