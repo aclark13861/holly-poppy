@@ -5,11 +5,9 @@ const Schema = mongoose.Schema;
 const personSchema = new Schema({
     FirstName: {
         type: String,
-        required: true
     },
     LastName: {
         type: String,
-        required: true
     },
     Company: {
         type: String,

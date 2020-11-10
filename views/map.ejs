@@ -24,9 +24,9 @@
       <ul class="navLinks">
         <li><a href="/">Home</a></li>
         <li><a href="/map">Map</a></li>
-        <li><a href="about.ejs">About Us</a></li>
+        <li><a href="/about">About Us</a></li>
         <li><a href="events.ejs">Events</a></li>
-        <li><a href="contact.ejs">Map</a></li>
+        <li><a href="/contact">Map</a></li>
       </ul>
     </nav>
   </div>
@@ -42,18 +42,15 @@
     }
   </style>
   <script>
-    // addressArray.push(item.Address)
-      // console.log(addressArray)
      var x = <%-JSON.stringify(users)%>;
      let addressArray = [];
      let companyArray = [];
      let websiteArray = [];
     for (var item of x) {
       companyArray.push(item.Company);
-      addressArray.push(item.Address);
+      addressArray.push(item.Address + ' , ' + item.City);
       websiteArray.push(item.Website);
     };
-    console.log('address Array ' + addressArray)
 
     let all = [companyArray, addressArray, websiteArray];
     let mix = [];
@@ -79,16 +76,8 @@ function group3(arr, len) {
      return chunks;
 }
 
-let locations = group3(mix, 3)
+let locations = group3(mix, 3);
 
-  //       var locations = [
-  //     ['City Floral', '1440 Kearney St, Denver', 'http://www.cityfloralgreenhouse.com'],
-  //     ['Skypilot Farm', '10384 Airport Rd, Longmont', 'http://www.skypilotfarm.com'],
-  //     ['Tribucha', '10047 Park Meadows Dr Unit A', ''],
-  //     ['Shrinkle Chic Boutique', '8377 W. Morraine Littleton', ''],
-  //     ['Susan Loves William', '6851 S Gaylord St, Centennial', 'http://www.susanloveswilliam.com']
-  // ];
-  
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
@@ -97,13 +86,52 @@ function initMap() {
     });
 
     var infowindow = new google.maps.InfoWindow();
+
+    const locationButton = document.createElement("button");
+  locationButton.textContent = "Pan to Current Location";
+  locationButton.classList.add("btn-sm");
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+  locationButton.addEventListener("click", () => {
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          infowindow.setPosition(pos);
+          infowindow.setContent("<h3>You are Here</h3>");
+          infowindow.open(map);
+          map.setCenter(pos);
+          createMarker(pos, "<h3>You are Here</h3>");
+        },
+        () => {
+          handleLocationError(true, infowindow, map.getCenter());
+        }
+      );
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infowindow, map.getCenter());
+    }
+  });
+
+  function handleLocationError(browserHasGeolocation, infowindow, pos) {
+  infowindow.setPosition(pos);
+  infowindow.setContent(
+    browserHasGeolocation
+      ? "Error: The Geolocation service failed."
+      : "Error: Your browser doesn't support geolocation."
+  );
+  infowindow.open(map);
+}
+
     var geocoder = new google.maps.Geocoder();
 
     var marker, i;
 
     for (i = 0; i < locations.length; i++) {
       geocodeAddress(locations[i]);
-      console.log('locations[i] ' + locations[i])
     }
 
 function geocodeAddress(location) {

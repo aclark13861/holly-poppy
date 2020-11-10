@@ -13,23 +13,7 @@
 <body>
 
     <!-- Navigation -->
-  <div class="menu">
-    <button class="nav-tgl" type="button" aria-label="toggle menu">
-      <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
-    </button>
-    <nav class="nav">
-      <!-- I don't care about the menu elements here so I will hide them-->
-      
-      <ul class="navLinks">
-        <li><a href="/">Home</a></li>
-        <li><a href="/map">Map</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="events.ejs">Events</a></li>
-        <li><a href="contact.ejs">Contact</a></li>
-        <img class="navLogo" src="/img/Asset%203.png">
-      </ul>
-    </nav>
-  </div>
+<%- include('partials/navbar') %>
 
   <h1 class="site-heading text-center text-white d-none d-lg-block">
     <!-- <span class="site-heading-upper text-primary mb-3">A Free Bootstrap 4 Business Theme</span> -->

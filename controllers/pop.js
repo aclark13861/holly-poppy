@@ -56,7 +56,14 @@ function showMap(req, res) {
 };
 
 function frame(req, res) {
-  res.render('iframeMap')
+  Poppy.find({}, function(err, users) {
+    if(err){
+      console.log(err)
+    }
+    else{
+      res.render('iframeMap', {users: users})
+    }
+  })
 };
 
 
