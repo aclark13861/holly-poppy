@@ -27,6 +27,9 @@ router.get('/contact', ctrl.contact);
   
 router.post('/send', ctrl.send);
 
+router.get('/pass', ctrl.pass);
+
 router.get('/frame', ctrl.frame);
+
     
 module.exports = router;

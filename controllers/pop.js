@@ -1,8 +1,6 @@
 const Poppy = require('../models/poppy');
 const nodemailer = require('nodemailer');
-const url = require('url');
-const { getMaxListeners } = require('gulp');
-require('dotenv').config();
+var data = require('../public/javascripts/data')
 
 module.exports = {
     about,
@@ -16,7 +14,8 @@ module.exports = {
     contact_error,
     contact,
     send,
-    frame
+    frame,
+    pass
 
   };
 
@@ -40,14 +39,20 @@ function create(req, res) {
   const poppy = new Poppy(req.body);
   poppy.save(function(err) {
     if (err) { return err } else {
-    res.json(req.body);
-    console.log(poppy);
+    res.render('newForm_send');
     }
   });
 }
 
 function showMap(req, res) {
-  res.render('map')
+  Poppy.find({}, function(err, users) {
+    if(err){
+      console.log(err)
+    }
+    else{
+      res.render('map', {users: users})
+    }
+  })
 };
 
 function frame(req, res) {
@@ -116,4 +121,8 @@ function send(req, res) {
       }
     });
 }
+
+function pass(req, res) {
+  res.render('password')
+};
 
