@@ -42,14 +42,52 @@
     }
   </style>
   <script>
-       var locations = [
-    ['Jovai Concepts', '5045 W 1st Ave, Denver', 'http://www.jovialconcepts.org'],
-    ['City Floral', '1440 Kearney St, Denver', 'http://www.cityfloralgreenhouse.com'],
-    ['Skypilot Farm', '10384 Airport Rd, Longmont', 'http://www.skypilotfarm.com'],
-    ['Tribucha', '10047 Park Meadows Dr Unit A', ''],
-    ['Shrinkle Chic Boutique', '8377 W. Morraine Littleton', ''],
-    ['Susan Loves William', '6851 S Gaylord St, Centennial', 'http://www.susanloveswilliam.com']
-  ];
+    // addressArray.push(item.Address)
+      // console.log(addressArray)
+     var x = <%-JSON.stringify(users)%>;
+     let addressArray = [];
+     let companyArray = [];
+     let websiteArray = [];
+    for (var item of x) {
+      companyArray.push(item.Company);
+      addressArray.push(item.Address);
+      websiteArray.push(item.Website);
+    };
+    console.log('address Array ' + addressArray)
+
+    let all = [companyArray, addressArray, websiteArray];
+    let mix = [];
+
+    for (var i = 0; all.length !== 0; i++) {
+    var j = 0;
+    while (j < all.length) {
+        if (i >= all[j].length) {
+            all.splice(j, 1);
+        } else {
+            mix.push(all[j][i]);
+            j += 1;
+        }
+    }
+}
+
+function group3(arr, len) {
+     let chunks = [];
+     let copy  = arr; // Use a copy to not modifiy the original array
+     while(copy.length + 1 > len) {
+         chunks.push(copy.splice(0, len));
+     }
+     return chunks;
+}
+
+let locations = group3(mix, 3)
+
+  //       var locations = [
+  //     ['City Floral', '1440 Kearney St, Denver', 'http://www.cityfloralgreenhouse.com'],
+  //     ['Skypilot Farm', '10384 Airport Rd, Longmont', 'http://www.skypilotfarm.com'],
+  //     ['Tribucha', '10047 Park Meadows Dr Unit A', ''],
+  //     ['Shrinkle Chic Boutique', '8377 W. Morraine Littleton', ''],
+  //     ['Susan Loves William', '6851 S Gaylord St, Centennial', 'http://www.susanloveswilliam.com']
+  // ];
   
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {

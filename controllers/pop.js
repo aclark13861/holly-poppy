@@ -39,7 +39,7 @@ function create(req, res) {
   const poppy = new Poppy(req.body);
   poppy.save(function(err) {
     if (err) { return err } else {
-    res.redirect('/');
+    res.render('newForm_send');
     }
   });
 }
