@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<%- include('partials/header') %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Person Form</title>
+    <title>New Poppy Form</title>
 </head>
+<script defer type="text/javascript">
+    var s ="";
+    while (s!= "hollypoppin") {
+    s=prompt("please enter your password");
+    if (s=="hollypoppin")
+    {}
+    else {
+	alert("Incorrect password-Try again");
+	}
+}
+    </script>
 <body>
     <h2>Want to be apart of Holly Poppy?</h2>
     <h3>Fill out the form below</h3>
@@ -20,7 +32,7 @@
 	</label><br>
 	<label>Address:
 	  <input type="text" name="Address">
-	</label><br>
+	</label><small>Format: Address , City</small><br>
 	<label>City:
 		<input type="text" name="City">
 	</label><br>
@@ -30,9 +42,9 @@
 	<label>Zip Code:
 		<input type="number" name="Zip">
 	</label><br>
-	<label>
-		<input type="number" name="Phone">
-	</label><br>
+	<label>Phone Number:
+		<input type="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="Phone">
+	</label><small>Format: 3034567890</small><br>
 	<label>Website URL:
 		<input type="text" name="Website">
 	</label><br>
