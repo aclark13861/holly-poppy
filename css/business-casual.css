@@ -1,9 +1,3 @@
-/*!
- * Start Bootstrap -  v0.0.0 (https://github.com/oneillCreative/holly-poppy#readme)
- * Copyright 2013-2020 
- * Licensed under ISC (https://github.com/StartBootstrap/holly-poppy/blob/master/LICENSE)
- */
-
 body {
   font-family: 'Lora';
   background-image: linear-gradient(rgba(208, 153, 226, 0.65), rgba(208, 153, 226, 0.5)), url("/img/poppy.jpg");
@@ -32,9 +26,15 @@ p {
   z-index: 20;
   right: 0;
   top: 0;
-  width: 200px;
+  width: 175px;
   height: auto;
   transform: rotate(-5deg);
+}
+
+@media screen and (max-width: 1240px) {
+  .watermark {
+    width: 140px;
+  }
 }
 
 .text-faded {
@@ -42,16 +42,22 @@ p {
 }
 
 .hero-title {
-  font-size: 5rem !important;
+  font-size: 5rem;
   line-height: 0.85 !important;
   text-shadow: 4px 4px 2px #969696;
+}
+
+@media screen and (max-width: 1240px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
 }
 
 .site-heading {
   margin-top: 3rem;
   /*margin-bottom: 2rem;*/
   line-height: 1;
-  font-family: p22-klauss-kursiv,cursive;
+  font-family: p22-klauss-kursiv, cursive;
   font-weight: 800;
   font-style: normal;
   opacity: .75;
@@ -75,6 +81,12 @@ p {
   opacity: .75;
 }
 
+@media screen and (max-width: 1240px) {
+  .site-heading .site-heading-lower {
+    font-size: 3.5rem;
+  }
+}
+
 .page-section {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -86,7 +98,7 @@ p {
 
 .section-heading .section-heading-upper {
   display: block;
-  font-size: 1rem;
+  /*font-size: 1rem;*/
   font-weight: 800;
 }
 
@@ -165,16 +177,17 @@ p {
 }
 
 .nav:before {
-  display: block;
-  position: fixed;
-  z-index: 100;
+  visibility: visible;
+  display: block !important;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed !important;
   top: 0;
   left: 0;
+  z-index: 100;
   content: '';
   width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  transition: all 500ms ease-in-out;
+  height: 100vw;
+  transition: all 700ms ease-in-out;
   -webkit-clip-path: circle(30px at calc(10% - 65px) 65px);
   clip-path: circle(30px at calc(10% - 65px) 65px);
   visibility: hidden;
@@ -187,23 +200,31 @@ p {
 }
 
 .menu.active .navLinks {
-    visibility: visible;
-    display: block!important;
-    background: #E8BFFB;
-    position: fixed!important;
-    top: 23vh;
-    left: 36vw;
-    z-index: 999;
-    margin: 0 auto;
-    padding-right: 8rem;
-    padding-top: 2rem;
-    padding-bottom: 7rem;
-    height: 100;
-    border-radius: 5px;
+  visibility: visible;
+  display: block !important;
+  background: #E8BFFB;
+  position: fixed !important;
+  top: 12vh;
+  left: 34.5vw;
+  z-index: 999;
+  margin: 0 auto;
+  padding-right: 8rem;
+  padding-top: 2rem;
+  padding-bottom: 7rem;
+  height: 100;
+  border-radius: 5px;
+  transition: all 1s ease-in-out;
 }
 
 .menu.active .navLinks li {
   list-style-type: none;
+  margin: 1rem;
+}
+
+.menu.active .navLinks li a {
+  font-family: p22-klauss-kursiv, cursive;
+  font-size: 35px;
+  color: #000;
 }
 
 .menu.active .nav-tgl > span {
@@ -224,6 +245,16 @@ p {
   transform: rotate(45deg);
 }
 
+.menu.active .navLogo {
+  visibility: visible;
+  height: 250px;
+  position: fixed;
+  z-index: 999;
+  top: 50vh;
+  left: 50vw;
+  opacity: .75;
+}
+
 .btn-xl {
   font-weight: 700;
   font-size: 0.8rem;
@@ -237,41 +268,128 @@ p {
   position: relative;
 }
 
-@media (min-width: 992px) {
+.intro .intro-img {
+  width: 75%;
+  float: right;
+  height: 450px;
+  margin-top: -50px;
+  border: 2px !important;
+  border-style: solid !important;
+  position: relative;
+  z-index: 50;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.65);
+}
+
+@media screen and (max-width: 1240px) and (min-width: 990px) {
   .intro .intro-img {
-    width: 75%;
-    float: right;
-    height: 450px;
-    margin-top: -50px;
-    border: 2px !important;
-    border-style: solid !important;
-  }
-  .intro .intro-text {
-    left: -50px;
-    width: 33%;
-    margin-top: -85px;
-    /*margin-top: 3rem;*/
-    position: absolute;
-    /*background: #fff;*/
-  }
-  .intro .intro-text p {
-    text-align: left;
-  }
-  .intro .intro-text .intro-button {
-    width: 100%;
-    left: -52px;
-    position: absolute;
-    bottom: -2rem;
-    /*background: #000!important;*/
-  }
-  .intro .intro-text .intro-button a {
-    background: #000 !important;
+    margin-top: 5px;
   }
 }
 
-@media (min-width: 1200px) {
+.intro .hero-bg {
+  background: linear-gradient(45deg, #F2A5E8, #fff);
+  height: 90%;
+  width: 90%;
+  position: absolute;
+  top: 14%;
+  border-radius: 5px;
+  border: 2px solid #D099E2;
+  padding-left: 2rem;
+  margin-left: -1rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.65);
+}
+
+.intro .intro-text {
+  left: -50px;
+  width: 33%;
+  margin-top: -115px;
+  /*margin-top: 3rem;*/
+  position: absolute;
+  /*background: #fff;*/
+  /*@media screen and (max-width: 1240px){
+        width: 100%;
+      }*/
+}
+
+.intro .intro-text h2 {
+  position: relative;
+  z-index: 60;
+  margin-left: -25px;
+}
+
+.intro .intro-text p {
+  text-align: left;
+  position: relative;
+}
+
+@media screen and (max-width: 1500px) {
+  .intro .intro-text p {
+    width: 92%;
+  }
+}
+
+@media screen and (max-width: 1500px) and (max-width: 1240px) {
+  .intro .intro-text p {
+    width: 125%;
+    font-size: .9rem;
+  }
+}
+
+.intro .intro-text .intro-button {
+  width: 100%;
+  left: -52px;
+  position: absolute;
+  bottom: -2rem;
+}
+
+@media screen and (max-width: 1500px) {
+  .intro .intro-text .intro-button {
+    left: -25px;
+    bottom: -1.5rem;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .intro .intro-text .intro-button {
+    left: 12px;
+  }
+}
+
+.intro .intro-text .intro-button a {
+  background: #000 !important;
+}
+
+@media screen and (min-width: 1240px) and (max-width: 1500px) {
   .intro .intro-text {
-    /*width: 45%;*/
+    margin-top: -100px !important;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .intro {
+    margin-top: 130px;
+  }
+}
+
+@media screen and (max-width: 1240px) and (max-width: 960px) {
+  .intro {
+    display: block;
+  }
+}
+
+.poppy-lower {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1240px) {
+  .poppy-lower {
+    visibility: visible;
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+    font-family: p22-klauss-kursiv, cursive;
+    font-weight: 800;
+    font-style: normal;
   }
 }
 
@@ -304,6 +422,7 @@ p {
   .about-heading .about-heading-img {
     position: relative;
     z-index: 0;
+    margin-top: -3rem;
   }
   .about-heading .about-heading-content {
     margin-top: -5rem;

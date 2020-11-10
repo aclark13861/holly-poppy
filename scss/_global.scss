@@ -24,9 +24,12 @@ p {
   z-index: 20;
   right: 0;
   top: 0;
-  width: 200px;
+  width: 175px;
   height: auto;
   transform: rotate(-5deg);
+  @media screen and (max-width: 1240px){
+    width: 140px;
+  }
 }
 
 .text-faded {
@@ -34,9 +37,12 @@ p {
 }
 
 .hero-title{
-  font-size: 5rem!important;
+  font-size: 5rem;
   line-height: .85!important;
   text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+  @media screen and (max-width: 1240px){
+    font-size: 3.5rem;
+  }
 }
 
 .site-heading {
@@ -48,7 +54,6 @@ p {
   font-style: normal;
   opacity: .75;
   color: #000;
-
   @include heading-font;
   .site-heading-upper {
     display: block;
@@ -61,6 +66,9 @@ p {
     line-height: 4rem;
     color: #000;
     opacity: .75;
+    @media screen and (max-width: 1240px){
+      font-size: 3.5rem;
+    }
   }
 }
 
@@ -73,7 +81,7 @@ p {
   /*text-transform: uppercase;*/
   .section-heading-upper {
     display: block;
-    font-size: 1rem;
+    /*font-size: 1rem;*/
     font-weight: 800;
   }
   .section-heading-lower {

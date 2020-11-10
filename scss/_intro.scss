@@ -1,0 +1,100 @@
+.intro {
+  position: relative;
+    .intro-img {
+      width: 75%;
+      float: right;
+      height: 450px;
+      margin-top: -50px;
+      border: 2px!important;
+      border-style: solid!important;
+      position: relative;
+      z-index: 50;
+      box-shadow: 5px 5px 5px rgba(0,0,0,.65);
+        @media screen and (max-width: 1240px) and (min-width: 990px) {
+          margin-top: 5px;
+        }    
+      }
+    .hero-bg{
+      background: linear-gradient(45deg, #F2A5E8, #fff);
+      height: 90%;
+      width: 90%;
+      position: absolute;
+      top: 14%;
+      border-radius: 5px;
+      border: 2px solid #D099E2;
+      padding-left: 2rem;
+      margin-left: -1rem;
+      box-shadow: 5px 5px 5px rgba(0,0,0,.65);
+    }
+    .intro-text {
+      left: -50px;
+      width: 33%;
+      margin-top: -115px;
+      /*margin-top: 3rem;*/
+      position: absolute;
+      /*background: #fff;*/
+      
+      /*@media screen and (max-width: 1240px){
+        width: 100%;
+      }*/
+      h2{
+        position: relative;
+        z-index: 60;
+        margin-left: -25px;
+      }
+      p{
+        text-align: left;
+        position: relative;
+        @media screen and (max-width: 1500px){
+          width: 92%;
+          @media screen and (max-width: 1240px){
+            width: 125%;
+            font-size: .9rem;
+          }
+        }
+
+
+      }
+      .intro-button {
+       width: 100%;
+        left: -52px;
+        position: absolute;
+        bottom: -2rem;
+        @media screen and (max-width: 1500px) {
+          left: -25px;
+          bottom: -1.5rem;
+        }
+        @media screen and (max-width: 1240px){
+          left: 12px;
+        }
+         a{
+          background: #000!important;
+         }
+      }
+
+      @media screen and (min-width: 1240px) and (max-width: 1500px) {
+        margin-top: -100px!important;
+      }
+
+    }
+  @media screen and (max-width: 1240px){
+    margin-top: 130px;
+    @media screen and (max-width: 960px){
+      display: block;
+    }
+  }
+}
+
+.poppy-lower{
+  visibility: hidden;
+
+    @media screen and (max-width: 1240px) {
+      visibility: visible;
+      position: absolute;
+      bottom: -2rem;
+      right: 0;
+      font-family: p22-klauss-kursiv, cursive;
+      font-weight: 800;
+      font-style: normal;
+    }
+}

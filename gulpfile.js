@@ -41,7 +41,7 @@ function browserSyncReload(done) {
   done();
 }
 
-// Clean vendor
+// // Clean vendor
 function clean() {
   return del(["./vendor/"]);
 }
@@ -73,16 +73,16 @@ function css() {
     .pipe(autoprefixer({
       cascade: false
     }))
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
-    .pipe(gulp.dest("./public/css"))
+    // .pipe(header(banner, {
+    //   pkg: pkg
+    // }))
+    .pipe(gulp.dest("./css"))
     .pipe(rename({
       suffix: ".min"
     }))
     .pipe(cleanCSS())
-    .pipe(gulp.dest("./public/css"))
-    .pipe(browsersync.stream());
+    .pipe(gulp.dest("./css"));
+    // .pipe(browsersync.stream());
 }
 
 // Watch files

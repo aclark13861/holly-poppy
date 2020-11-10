@@ -8,6 +8,109 @@
  	visibility: hidden;
  }
 
+ .site-heading span{
+ 	color: #fff!important;
+ 	-webkit-text-stroke-width: 1px;
+  	-webkit-text-stroke-color: #F2A5E8;
+  	opacity: 1!important;
+
+ }
+
+ .section-heading .section-heading-upper{
+ 	margin-left: -25px;
+ }
+
+ @media screen and (max-width: 1500px) {
+ 	.intro .intro-text {
+ 	left: -50px;
+    width: 33%;
+    margin-top: -30px;
+    position: absolute;}
+
+    .hero-bg {
+  	top: 8%;
+  	width: 105%;
+  	height: 105%;
+  }
+
+	.intro-text p{
+	  	width: 92%;
+	 }
+
+	.intro .intro-text .intro-button {
+	 	left: -25px;
+	 	bottom: -1.5rem;
+	 }
+ }
+
+@media screen and (max-width: 2100px) {
+	.intro .intro-text{
+		left: -50px;
+      width: 33%;
+      margin-top: -85px;
+      /*margin-top: 3rem;*/
+      position: absolute;
+	}
+	.hero-bg{
+	 	background: linear-gradient(45deg, #F2A5E8, #fff);
+	 	height: 90%;
+	 	width: 90%;
+	 	position: absolute;
+	 	top: 14%;
+	 	border-radius: 5px;
+	 	border: 2px solid #D099E2;
+	 	padding-left: 2rem;
+	 	margin-left: -1rem;
+	 	box-shadow: 5px 5px 5px rgba(0,0,0,.65);
+
+	 }
+	 .intro .intro-button {
+       width: 100%;
+        left: -52px;
+        position: absolute;
+        bottom: -2rem!important;
+    }
+    .intro-text p{
+	  	width: 100%;
+	 }
+
+}
+
+@media screen and (max-width: 1455px) {
+	.watermark{
+		width: 175px;
+	}
+}
+
+@media screen and (max-width: 1455px) {
+	.watermark{
+		width: 150px;
+	}
+}
+
+@media screen and (max-width: 1240px){
+	.intro .intro-text{
+		width: 100%;
+	}
+}
+
+ .intro-img{
+ 	position: relative;
+ 	z-index: 50;
+ 	box-shadow: 5px 5px 5px rgba(0,0,0,.65);
+ }
+
+ .intro-text h2{
+ 	position: relative;
+ 	z-index: 60;
+ }
+
+ .intro-text p{
+ 	position: relative;
+ }
+
+
+
  .navLogo{
  	visibility: visible;
  	height: 250px;
@@ -17,3 +120,4 @@
  	left: 50vw;
  	opacity: .75;
  }.menu.active
+

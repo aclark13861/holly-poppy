@@ -67,42 +67,31 @@
 .nav:before {
       visibility: visible;
       display: block!important;
-      background: #fff;
+      background: rgba(0,0,0,.8);
       position: fixed!important;
-      top: 25vh;
-      left: 38vw;
-      z-index: 999;
-      margin: 0 auto;
-      padding-right: 8rem;
-      padding-top: 2rem;
-      padding-bottom: 7rem;
-      height: 100;
-      transition: all 1s ease-in-out;
-  }
-  
-  // that's all the pen about
-  clip-path: circle(30px at calc(10% - 65px) 65px);
-  // for AT
-  visibility: hidden;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      content:'';
+      width: 100vw;
+      height: 100vw;
+      transition: all 700ms ease-in-out;
+      clip-path: circle(30px at calc(10% - 65px) 65px);
+      visibility: hidden;
 }
 
-// when it gits activated
 .menu.active {
   .nav:before {
     visibility: visible;
-
     clip-path: circle(100%);
-
-    
   }
-
     .navLinks {
       visibility: visible;
     display: block!important;
     background: #E8BFFB;
     position: fixed!important;
-    top: 23vh;
-    left: 36vw;
+    top: 12vh;
+    left: 34.5vw;
     z-index: 999;
     margin: 0 auto;
     padding-right: 8rem;
@@ -116,7 +105,8 @@
         margin: 1rem;
         a{
           font-family: p22-klauss-kursiv, cursive;
-          font-size: 18px;
+          font-size: 35px;
+          color: #000;
         }
       }
   }
@@ -135,7 +125,19 @@
       transform: rotate(45deg);
     }
   }
+
+  .navLogo{
+    visibility: visible;
+    height: 250px;
+    position: fixed;
+    z-index: 999;
+    top: 50vh;
+    left: 50vw;
+    opacity: .75;
+  }
 }
+
+
 
 
 
