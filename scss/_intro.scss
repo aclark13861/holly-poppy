@@ -1,5 +1,6 @@
 .intro {
   position: relative;
+  margin-right: -20px;
     .intro-img {
       width: 75%;
       float: right;
@@ -10,7 +11,7 @@
       position: relative;
       z-index: 50;
       box-shadow: 5px 5px 5px rgba(0,0,0,.65);
-        @media screen and (max-width: 1240px) and (min-width: 990px) {
+        @media screen and (max-width: 990px) {
           margin-top: 5px;
         }    
       }
@@ -25,6 +26,9 @@
       padding-left: 2rem;
       margin-left: -1rem;
       box-shadow: 5px 5px 5px rgba(0,0,0,.65);
+      @media screen and (max-width: 769px) {
+        top: -2%;
+      }
     }
     .intro-text {
       left: -50px;
@@ -32,11 +36,12 @@
       margin-top: -115px;
       /*margin-top: 3rem;*/
       position: absolute;
-      /*background: #fff;*/
-      
-      /*@media screen and (max-width: 1240px){
-        width: 100%;
-      }*/
+      @media screen and (max-width: 990px){
+        margin-top: -60px;
+      }
+      @media screen and (max-width: 769px){
+        margin-top: 25px;
+      }
       h2{
         position: relative;
         z-index: 60;
@@ -47,13 +52,18 @@
         position: relative;
         @media screen and (max-width: 1500px){
           width: 92%;
-          @media screen and (max-width: 1240px){
+        }
+        @media screen and (max-width: 990px){
             width: 125%;
             font-size: .9rem;
           }
+        @media screen and (max-width: 769px) {
+          width: 128%;
+          margin-top: -50px;
         }
-
-
+        @media screen and (max-width: 767px) {
+          width: 167%;
+        }  
       }
       .intro-button {
        width: 100%;
@@ -61,11 +71,19 @@
         position: absolute;
         bottom: -2rem;
         @media screen and (max-width: 1500px) {
-          left: -25px;
+          /*left: -25px;*/
           bottom: -1.5rem;
         }
         @media screen and (max-width: 1240px){
           left: 12px;
+        }
+        @media screen and (max-width: 1024px){
+          left: -25px;
+        }
+        @media screen and (max-width: 769px) {
+          left: 85px;
+          bottom: -0.5rem;
+          z-index: 99;
         }
          a{
           background: #000!important;
@@ -77,24 +95,44 @@
       }
 
     }
-  @media screen and (max-width: 1240px){
+  @media screen and (min-width: 1240px) and (max-width: 1240px) {
     margin-top: 130px;
     @media screen and (max-width: 960px){
       display: block;
     }
   }
+  @media screen and (max-width: 768px){
+    margin-top: 125px;
+  }
+  @media screen and (max-width: 535px){
+    display: block;
+  }
 }
 
 .poppy-lower{
   visibility: hidden;
+  @media screen and (max-width: 990px) {
+    visibility: visible;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-family: p22-klauss-kursiv, cursive;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 4.5rem;
+    opacity: .8;
+  }
+  @media screen and (max-width: 769px) {
+    font-size: 3rem;
+  }
+  @media screen and (max-width: 650px)  {
+    font-size: 2.5rem
+  }
+  @media screen and (max-height: 739px){
+    bottom: 7rem;
+  }
+  @media screen and (max-height: 754px){
+    bottom: 5rem;
+  }
 
-    @media screen and (max-width: 1240px) {
-      visibility: visible;
-      position: absolute;
-      bottom: -2rem;
-      right: 0;
-      font-family: p22-klauss-kursiv, cursive;
-      font-weight: 800;
-      font-style: normal;
-    }
 }
