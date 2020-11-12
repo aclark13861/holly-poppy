@@ -27,8 +27,14 @@ p {
   width: 175px;
   height: auto;
   transform: rotate(-5deg);
-  @media screen and (max-width: 1240px){
-    width: 140px;
+  @media screen and (max-width: 1110px){
+    width: 150px;
+  }
+  @media screen and (max-width: 1020px) {
+    width: 125px;
+  }
+  @media screen and (max-width: 650px) {
+    width: 85px;
   }
 }
 
@@ -40,8 +46,13 @@ p {
   font-size: 5rem;
   line-height: .85!important;
   text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
-  @media screen and (max-width: 1240px){
+  @media screen and (max-width: 1250px){
     font-size: 3.5rem;
+  }
+  @media screen and (max-width: 769px) {
+    position: absolute;
+    top: -8rem;
+    left: 1rem;
   }
 }
 
@@ -67,7 +78,7 @@ p {
     color: #000;
     opacity: .75;
     @media screen and (max-width: 1240px){
-      font-size: 3.5rem;
+      font-size: 5rem;
     }
   }
 }
