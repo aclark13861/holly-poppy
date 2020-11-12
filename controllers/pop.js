@@ -1,6 +1,5 @@
 const Poppy = require('../models/poppy');
 const nodemailer = require('nodemailer');
-var data = require('../public/javascripts/data')
 
 module.exports = {
     about,

@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var Person = require('../models/poppy.js')
-
 
 const ctrl = require('../controllers/pop')
 

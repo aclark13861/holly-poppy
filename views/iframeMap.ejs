@@ -26,13 +26,15 @@ var x = <%-JSON.stringify(users)%>;
      let addressArray = [];
      let companyArray = [];
      let websiteArray = [];
+     let mapArray = [];
     for (var item of x) {
       companyArray.push(item.Company);
       addressArray.push(item.Address + ' , ' + item.City);
       websiteArray.push(item.Website);
+      mapArray.push(item.google_map);
     };
 
-    let all = [companyArray, addressArray, websiteArray];
+    let all = [companyArray, addressArray, websiteArray, mapArray];
     let mix = [];
 
     for (var i = 0; all.length !== 0; i++) {
@@ -56,7 +58,7 @@ function group3(arr, len) {
      return chunks;
 }
 
-let locations = group3(mix, 3);
+let locations = group3(mix, 4);
   
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -74,35 +76,31 @@ function initMap() {
       geocodeAddress(locations[i]);
     }
 
-function geocodeAddress(location) {
-  var geocoder = new google.maps.Geocoder();
-  geocoder.geocode( { 'address': location[1]}, function(results, status) {
-  //alert(status);
-    if (status == google.maps.GeocoderStatus.OK) {
+  function geocodeAddress(location) {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': location[1]}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        createMarker(results[0].geometry.location,`<h3>${location[0]}</h3>`+location[1]+ '<br>' + `<a href="${location[2]}" target="_blank">${location[2]}</a>` + '<br>' + `<a href="${location[3]}" target="_blank">Get Directions to ${location[0]}</a>`);
+      }
+      else
+      {
+        alert("some problem in geocode" + status);
+      }
+    }); 
+  }
 
-      //alert(results[0].geometry.location);
-      map.setCenter(results[0].geometry.location);
-      createMarker(results[0].geometry.location,`<h3>${location[0]}</h3>`+location[1]+ '<br>' + `<a href="${location[2]}" target="_blank">${location[2]}</a>`);
-    }
-    else
-    {
-      alert("some problem in geocode" + status);
-    }
-  }); 
-}
-
-function createMarker(latlng,html){    
-  var marker = new google.maps.Marker({
-    position: latlng,
-    map: map,
-    icon: '/img/poppy-marker-8-50x50.png',
+  function createMarker(latlng,html){    
+    var marker = new google.maps.Marker({
+      position: latlng,
+      map: map,
+      icon: '/img/poppy-marker-8-50x50.png',
   }); 
 
   marker.addListener("click", () => {
     infowindow.setContent(html);
     infowindow.open(map, marker);
-  });
-}
+    });
+  }
 }
   </script>
 </body>

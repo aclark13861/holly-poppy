@@ -31,6 +31,7 @@ const personSchema = new Schema({
     },
     Phone: Number,
     Website: String,
+    google_map: String,
 }, {
     timestamps: true
 });
