@@ -49,7 +49,45 @@ function showMap(req, res) {
       console.log(err)
     }
     else{
-      res.render('map', {users: users})
+      let x = users;
+      let locations;
+      let addressArray = [];
+      let companyArray = [];
+      let websiteArray = [];
+      let mapArray = [];
+    for (var item of x) {
+      companyArray.push(item.Company);
+      addressArray.push(item.Address + ' , ' + item.City);
+      websiteArray.push(item.Website);
+      mapArray.push(item.google_map);
+    };
+
+    let all = [companyArray, addressArray, websiteArray, mapArray];
+    let mix = [];
+
+    for (var i = 0; all.length !== 0; i++) {
+    var j = 0;
+    while (j < all.length) {
+        if (i >= all[j].length) {
+            all.splice(j, 1);
+        } else {
+            mix.push(all[j][i]);
+            j += 1;
+        }
+    }
+}
+
+function group3(arr, len) {
+     let chunks = [];
+     let copy  = arr; // Use a copy to not modifiy the original array
+     while(copy.length + 1 > len) {
+         chunks.push(copy.splice(0, len));
+     }
+     return chunks;
+}
+
+  locations = group3(mix, 4);
+      res.render('map', {locations: locations})
     }
   })
 };

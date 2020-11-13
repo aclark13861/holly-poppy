@@ -10,7 +10,7 @@
   <script async defer type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnNY4Px8zfiDo3zWqujXBwJykMyHRoDw8&callback=initMap"></script>
   <div  style="position:absolute;" class="menu">
-    <button style="position:absolute; top:2px; left:185px;" class="nav-tgl" type="button" aria-label="toggle menu">
+    <button style="position:absolute; top:2px; left:200px;" class="nav-tgl" type="button" aria-label="toggle menu">
       <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
     </button>
     <nav class="nav">
@@ -36,45 +36,7 @@
     }
   </style>
   <script>
-     var x = <%-JSON.stringify(users)%>;
-     let addressArray = [];
-     let companyArray = [];
-     let websiteArray = [];
-     let mapArray = [];
-    for (var item of x) {
-      companyArray.push(item.Company);
-      addressArray.push(item.Address + ' , ' + item.City);
-      websiteArray.push(item.Website);
-      mapArray.push(item.google_map);
-
-    };
-
-    let all = [companyArray, addressArray, websiteArray, mapArray];
-    let mix = [];
-
-    for (var i = 0; all.length !== 0; i++) {
-    var j = 0;
-    while (j < all.length) {
-        if (i >= all[j].length) {
-            all.splice(j, 1);
-        } else {
-            mix.push(all[j][i]);
-            j += 1;
-        }
-    }
-}
-
-function group3(arr, len) {
-     let chunks = [];
-     let copy  = arr; // Use a copy to not modifiy the original array
-     while(copy.length + 1 > len) {
-         chunks.push(copy.splice(0, len));
-     }
-     return chunks;
-}
-
-let locations = group3(mix, 4);
-
+let locations = <%-JSON.stringify(locations)%>;
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
@@ -123,43 +85,43 @@ function initMap() {
     infowindow.open(map);
   }
 
-    var geocoder = new google.maps.Geocoder();
+  for (let i = 0; i < locations.length; i++) {
+    geocodeAddress(locations[i], map)
+  }
+}
 
-    var marker, i;
+var delayfactor = 0;
 
-    for (i = 0; i < locations.length; i++) {
-      geocodeAddress(locations[i]);
-    }
-
-  function geocodeAddress(location) {
+  function geocodeAddress(location, map) {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': location[1]}, function(results, status) {
-    //alert(status);
       if (status == google.maps.GeocoderStatus.OK) {
-
-        //alert(results[0].geometry.location);
-        createMarker(results[0].geometry.location,`<h3>${location[0]}</h3>`+location[1]+ '<br>' + `<a href="${location[2]}" target="_blank">${location[2]}</a>` + '<br>' + `<a href="${location[3]}" target="_blank">Get Directions to ${location[0]}</a>`);
-      }
-      else
-      {
+        createMarker(results[0].geometry.location,`<h3>${location[0]}</h3>`+location[1]+ '<br>' + `<a href="${location[2]}" target="_blank">${location[2]}</a>` + '<br>' + `<a href="${location[3]}" target="_blank">Get Directions to ${location[0]}</a>`, map);
+      } else if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+        delayfactor++;
+        setTimeout(function () {
+          geocodeAddress(location, map);
+        }, delayfactor * 1000);
+      } else {
         alert("some problem in geocode" + status);
       }
     }); 
   }
-
-function createMarker(latlng,html){    
+function createMarker(latlng,html,map){    
   var marker = new google.maps.Marker({
     position: latlng,
     map: map,
     icon: '/img/poppy-marker-8-50x50.png',
   }); 
 
+  var infowindow = new google.maps.InfoWindow();
+
     marker.addListener("click", () => {
       infowindow.setContent(html);
       infowindow.open(map, marker);
     });
   }
-}
+
   </script>
 </body>
 </html>

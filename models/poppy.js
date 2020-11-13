@@ -27,7 +27,6 @@ const personSchema = new Schema({
     },
     Zip: {
         type: Number,
-        required: true
     },
     Phone: Number,
     Website: String,

@@ -67,41 +67,44 @@ function initMap() {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-    var infowindow = new google.maps.InfoWindow();
-    var geocoder = new google.maps.Geocoder();
-
-    var marker, i;
-
     for (i = 0; i < locations.length; i++) {
-      geocodeAddress(locations[i]);
+      geocodeAddress(locations[i], map);
     }
+  }
 
-  function geocodeAddress(location) {
+  var delayfactor = 0;
+
+  function geocodeAddress(location, map) {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': location[1]}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
-        createMarker(results[0].geometry.location,`<h3>${location[0]}</h3>`+location[1]+ '<br>' + `<a href="${location[2]}" target="_blank">${location[2]}</a>` + '<br>' + `<a href="${location[3]}" target="_blank">Get Directions to ${location[0]}</a>`);
+        createMarker(results[0].geometry.location,`<h3>${location[0]}</h3>`+location[1]+ '<br>' + `<a href="${location[2]}" target="_blank">${location[2]}</a>` + '<br>' + `<a href="${location[3]}" target="_blank">Get Directions to ${location[0]}</a>`, map);
       }
-      else
-      {
+      else if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+        delayfactor++;
+        setTimeout(function () {
+          geocodeAddress(location, map)
+        }, delayfactor * 1000);
+      } else {
         alert("some problem in geocode" + status);
       }
     }); 
   }
 
-  function createMarker(latlng,html){    
+  function createMarker(latlng,html,map){    
     var marker = new google.maps.Marker({
       position: latlng,
       map: map,
       icon: '/img/poppy-marker-8-50x50.png',
   }); 
 
+  var infowindow = new google.maps.InfoWindow();
+
   marker.addListener("click", () => {
     infowindow.setContent(html);
     infowindow.open(map, marker);
     });
   }
-}
   </script>
 </body>
 </html>
