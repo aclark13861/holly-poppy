@@ -5,11 +5,11 @@
     <body>
         <%- include('partials/navbar') %>
         <div class="container">
-            <div class="row">
+            <div class="row contact-form ace">
                 <h1>Contact</h1>
             </div>
             <hr>
-            <div class="row">
+            <div class="row contact-form">
                 <form class="col-12 col-md-8" method="post" action="/send">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -31,7 +31,7 @@
                         <label for="enquiry">Message To Holly Poppy</label>
                         <textarea class="form-control" id="enquiry" name="enquiry" rows="6"></textarea>
                     </div>
-                    <div class="float-right"> <!-- align button to the right -->
+                    <div class="float-right form-button"> <!-- align button to the right -->
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </div>
                 </form>
@@ -40,5 +40,11 @@
                 <p></p>
             </div>
         </div>
+
+        <footer class="footer text-faded text-center py-5">
+          <div class="container">
+            <p class="m-0 small">Copyright &copy; Your Website 2020</p>
+          </div>
+        </footer>
     </body>
 </html>
