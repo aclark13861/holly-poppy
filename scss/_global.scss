@@ -54,6 +54,9 @@ p {
     top: -8rem;
     left: 1rem;
   }
+  /*@media screen and (max-width: 425px){
+    left: -8rem;
+  }*/
 }
 
 .site-heading {
@@ -104,5 +107,32 @@ p {
 
 .bg-faded {
   background-color: fade-out($white, 0.15);
+}
+
+.ace{
+  margin-top: 50px;
+}
+
+.contact-form{
+  align-items: center;
+  justify-content: center;
+  label{
+    font-family: p22-klauss-kursiv, cursive;
+    font-weight: 800;
+    font-style: normal;
+  }
+}
+
+.form-button{
+  margin-top: 25px;
+  button{
+    background: #000;
+    margin-bottom: 50px;
+  }
+}
+
+.google-calendar{
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 

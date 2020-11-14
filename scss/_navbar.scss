@@ -110,6 +110,8 @@
   .nav:before {
     visibility: visible;
     clip-path: circle(100%);
+    height: 100%;
+    width: 105%;
   }
     .navLinks {
       visibility: visible;
@@ -126,6 +128,25 @@
       height: 100;
       border-radius: 5px;
       transition: all 1s ease-in-out;
+      @media screen and (max-width: 1024px){
+        left: 29.5vw;
+      }
+      @media screen and (max-width: 768px){
+        left: 24.5vw;
+      }
+      @media screen and (max-width: 414px){
+        left: 7vw;
+        padding-right: 5rem;
+      }
+      @media screen and (max-width: 375px){
+        padding-right: 3rem;
+      }
+      @media screen and (max-width: 320px){
+        padding-right: 1.5rem;
+        padding-top: 1rem;
+        padding-bottom: 5rem;
+        padding-left: 1rem;
+      }
       li{
         list-style-type: none;
         margin: 1rem;
@@ -164,6 +185,30 @@
     top: 50vh;
     left: 50vw;
     opacity: .75;
+    @media screen and (max-width: 1440px){
+      top: 33vh;
+      left: 48vw;
+    }
+    @media screen and (max-width: 1024px){
+      top: 30vh;
+      left: 48vw;
+    }
+    @media screen and (max-width: 768px){
+      top: 36vh;
+      left: 49vw;
+    }
+    @media screen and (max-width: 414px){
+      top: 50vh;
+      left: 49vw;
+      height: 215px;
+    }
+    @media screen and (max-width: 375px){
+      height: 190px;
+    }
+    @media screen and (max-width: 320px){
+      height: 160px;
+      top: 63vw;
+    }
   }
 }
 
