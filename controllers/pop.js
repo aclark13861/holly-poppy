@@ -1,6 +1,14 @@
 const Poppy = require('../models/poppy');
 const nodemailer = require('nodemailer');
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config({path: '.env'});
+};
+
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY
+const stripePublicKey = process.env.STRIPE_PUBLIC_KEY
+const stripe = require('stripe')(stripeSecretKey)
+
 module.exports = {
     about,
     store,
@@ -14,7 +22,9 @@ module.exports = {
     contact,
     send,
     frame,
-    pass
+    pass,
+    check,
+    payment
 
   };
 
@@ -170,3 +180,31 @@ function pass(req, res) {
   res.render('password')
 };
 
+function check(req, res) {
+  res.render('checkout', {
+    stripePublicKey: stripePublicKey,
+  })
+};
+
+function payment(req, res) {
+  stripe.customers.create({
+    email: req.body.stripeEmail,
+    source: req.body.stripeToken,
+    name: 'Holly Poppy',
+  })
+  .then((customer) => {
+    return stripe.charges.create({
+      amount: '4000',
+      description: 'Subscription fee',
+      currency: 'USD',
+      customer: customer.id
+
+    })
+  })
+  .then((charge) => {
+    res.render('newForm')
+  })
+  .catch((err) => {
+    res.send(err)
+  })
+}
