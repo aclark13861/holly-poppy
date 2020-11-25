@@ -29,8 +29,14 @@ router.get('/pass', ctrl.pass);
 
 router.get('/frame', ctrl.frame);
 
-router.get('/check', ctrl.check);
+router.get('/customerView', ctrl.customerView);
 
-router.post('/payment', ctrl.payment);
+router.post('/signUp', ctrl.signUp);
+
+router.post('/processPayment', ctrl.processPayment);
+
+// router.get('/check', ctrl.check);
+
+// router.post('/payment', ctrl.payment);
 
 module.exports = router;

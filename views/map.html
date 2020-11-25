@@ -1,7 +1,25 @@
 <!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en">
 <head>
-  <%- include('partials/header') %>
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+  <link href="/css/business-casual.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/cuc8dfh.css">
+  <script src="/jquery/jquery.min.js"></script>
+  <script src=/jquery/jquery.js></script>
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script defer src="/jquery/main.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E740VX908N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-E740VX908N');
+  </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poppy Map</title>
@@ -36,7 +54,7 @@
     }
   </style>
   <script>
-let locations = <%-JSON.stringify(locations)%>;
+let locations = {{ locations | dump | safe }};
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,

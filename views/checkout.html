@@ -1,0 +1,49 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+<script src="https://js.stripe.com/v3"></script>
+</head>
+<body>
+    <h3>Become a Poppy</h3>
+    <form action="payment" method="POST"> 
+    <script
+        src="//checkout.stripe.com/v2/checkout.js"
+        class="stripe-button"
+        data-key="<%= stripePublicKey %>" 
+        data-amount="4000" 
+        data-currency="usd" 
+        data-name="Holly Poppy" 
+        data-description="Become a Poppy" 
+        data-locale="auto" > 
+        </script> 
+    </form> 
+</body> -->
+<!-- </html> -->
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>Stripe Made Easy | {{ title }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Import Stripe Client-Side Library -->
+    <script  src="https://js.stripe.com/v3/"></script>
+    {% if admin %}
+      <link rel="stylesheet" type="text/css" href="/styles/adminView.css">
+    {% else %}
+      <link rel="stylesheet" type="text/css" href="/styles/customerView.css">
+    {% endif %}
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="app-header">
+        <h1>Become A Poppy</h1>
+      </div>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

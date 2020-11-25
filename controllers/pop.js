@@ -1,5 +1,6 @@
 const Poppy = require('../models/poppy');
 const nodemailer = require('nodemailer');
+const STRIPE_API = require('../api/stripe-functions.js');
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config({path: '.env'});
@@ -23,8 +24,11 @@ module.exports = {
     send,
     frame,
     pass,
-    check,
-    payment
+    customerView,
+    signUp,
+    processPayment
+    // check,
+    // payment
 
   };
 
@@ -107,8 +111,8 @@ function frame(req, res) {
     if(err){
       console.log(err)
     }
-    else{
-      res.render('iframeMap', {users: users})
+    else {
+      res.render('iframeMap', { users: users });
     }
   })
 };
@@ -180,31 +184,75 @@ function pass(req, res) {
   res.render('password')
 };
 
-function check(req, res) {
-  res.render('checkout', {
-    stripePublicKey: stripePublicKey,
-  })
+// function check(req, res) {
+//   res.render('checkout', {
+//     stripePublicKey: stripePublicKey,
+//   })
+// };
+
+// function payment(req, res) {
+//   stripe.customers.create({
+//     email: req.body.stripeEmail,
+//     source: req.body.stripeToken,
+//     name: 'Holly Poppy',
+//   })
+//   .then((customer) => {
+//     return stripe.charges.create({
+//       amount: '4000',
+//       description: 'Subscription fee',
+//       currency: 'USD',
+//       customer: customer.id
+
+//     })
+//   })
+//   .then((charge) => {
+//     res.render('newForm')
+//   })
+//   .catch((err) => {
+//     res.send(err)
+//   })
+// }
+
+function customerView(req, res){
+  STRIPE_API.getAllProductsAndPlans().then(products => {
+    products = products.filter(product => {
+      return product.plans.length > 0;
+    });
+    res.render('customerView.html', {products: products});
+  });
 };
 
-function payment(req, res) {
-  stripe.customers.create({
-    email: req.body.stripeEmail,
-    source: req.body.stripeToken,
-    name: 'Holly Poppy',
-  })
-  .then((customer) => {
-    return stripe.charges.create({
-      amount: '4000',
-      description: 'Subscription fee',
-      currency: 'USD',
-      customer: customer.id
+function signUp(req, res){
+  var product = {
+    name: req.body.productName
+  };
 
-    })
-  })
-  .then((charge) => {
-    res.render('newForm')
-  })
-  .catch((err) => {
-    res.send(err)
-  })
+  var plan = {
+    id: req.body.planId,
+    name: req.body.planName,
+    amount: req.body.planAmount,
+    interval: req.body.planInterval,
+    interval_count: req.body.planIntervalCount
+  }
+
+  res.render('signUp.html', {stripePublicKey: stripePublicKey, product: product, plan: plan});
+}
+
+function processPayment(req, res){
+  var product = {
+    name: req.body.productName
+  }
+  var plan = {
+    id: req.body.planId,
+    name: req.body.planName,
+    amount: req.body.planAmount,
+    interval: req.body.planInterval,
+    interval_count: req.body.planIntervalCount
+  }
+
+  STRIPE_API.createCustomerAndSubscription(req.body).then(() => {
+    res.render('signUp.html', {product: product, plan: plan, success: true});
+  }).catch(err => {
+    res.render('signUp.html', {product: product, plan: plan, error: true});
+  });
 }
