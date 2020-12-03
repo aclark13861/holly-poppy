@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var Person = require('../models/poppy.js')
-
 
 const ctrl = require('../controllers/pop')
 
@@ -31,5 +29,14 @@ router.get('/pass', ctrl.pass);
 
 router.get('/frame', ctrl.frame);
 
-    
+router.get('/customerView', ctrl.customerView);
+
+router.post('/signUp', ctrl.signUp);
+
+router.post('/processPayment', ctrl.processPayment);
+
+// router.get('/check', ctrl.check);
+
+// router.post('/payment', ctrl.payment);
+
 module.exports = router;

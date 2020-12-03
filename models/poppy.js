@@ -5,11 +5,9 @@ const Schema = mongoose.Schema;
 const personSchema = new Schema({
     FirstName: {
         type: String,
-        required: true
     },
     LastName: {
         type: String,
-        required: true
     },
     Company: {
         type: String,
@@ -29,10 +27,10 @@ const personSchema = new Schema({
     },
     Zip: {
         type: Number,
-        required: true
     },
     Phone: Number,
     Website: String,
+    google_map: String,
 }, {
     timestamps: true
 });

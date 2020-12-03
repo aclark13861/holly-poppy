@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+	<link href="/css/business-casual.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.typekit.net/cuc8dfh.css">
+	<script src="/jquery/jquery.min.js"></script>
+	<script src=/jquery/jquery.js></script>
+	<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script defer src="/jquery/main.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-E740VX908N"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-E740VX908N');
+	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Poppy Form</title>
+</head>
+<div class="menu">
+    <button class="nav-tgl" type="button" aria-label="toggle menu">
+      <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
+    </button>
+    <nav class="nav">
+      <ul class="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/map">Map</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/store">Events</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <img class="navLogo" src="/img/Asset%203.png">
+      </ul>
+    </nav>
+  </div>
+<!-- <script defer type="text/javascript">
+    var s ="";
+    while (s!= "hollypoppin") {
+    s=prompt("please enter your password");
+    if (s=="hollypoppin")
+    {}
+    else {
+	alert("Incorrect password-Try again");
+	}
+}
+</script> -->
+<body>
+	<div class="row text-center">
+    <h2>Want to be apart of Holly Poppy?</h2>
+    <h3>Fill out the form below</h3>
+<form action="/users" method="POST">
+	<label>First Name:
+	  <input type="text" name="FirstName">
+	</label><br>
+	<label>Last Name:
+	  <input type="text" name="LastName">
+	</label><br>
+	<label>Company:
+	  <input id="Company" type="text" name="Company">
+	</label><br>
+	<label>Address:
+	  <input id="Address" type="text" name="Address">
+	</label><br>
+	<label>City:
+		<input id="City" type="text" name="City">
+	</label><br>
+	<label>State:
+		<input type="text" name="State">
+	</label><br>
+	<label>Zip Code:
+		<input type="number" name="Zip">
+	</label><br>
+	<label>Phone Number:
+		<input type="number" name="Phone">
+	</label><small>Format: 3034567890</small><br>
+	<label>Website URL:
+		<input type="text" name="Website">
+	</label><small>Format: http://www.yourwebsite.com</small><br>
+	<button type="submit">Submit</button> 
+</form>
+</div>
+</body>
+</html>
