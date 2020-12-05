@@ -9,7 +9,6 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  overflow-x: hidden;
 }
 
 h1,
@@ -150,6 +149,12 @@ p {
   justify-content: center;
 }
 
+.contact-form label {
+  font-family: p22-klauss-kursiv, cursive;
+  font-weight: 800;
+  font-style: normal;
+}
+
 .form-button {
   margin-top: 25px;
 }
@@ -157,6 +162,127 @@ p {
 .form-button button {
   background: #000;
   margin-bottom: 50px;
+}
+
+.google-calendar {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.newForm {
+  display: block;
+  text-align: center;
+}
+
+.newForm h2 {
+  margin-top: 5vh;
+  /*width: 100%;*/
+  font-size: calc(18px + 1.5rem);
+}
+
+.newForm h3 {
+  margin-bottom: 3vh;
+}
+
+.newForm .col02 {
+  margin-left: -25px;
+}
+
+.newForm label {
+  display: block !important;
+  width: 100px;
+  text-align: left;
+  margin-bottom: -10px;
+  font-family: mostra-nuova, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 960px) {
+  .newForm label {
+    margin-left: 40%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .newForm label {
+    margin-left: 36%;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .newForm label {
+    margin-left: 35%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .newForm label {
+    margin-left: 33%;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .newForm label {
+    margin-left: 30%;
+  }
+}
+
+.newForm label input {
+  font-family: superclarendon, serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 1515px) {
+  .newForm label input {
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .newForm label input {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .newForm label input {
+    width: 230px;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .newForm label input {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .newForm label input {
+    width: 205px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .newForm label input {
+    width: 190px;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .newForm label input {
+    width: 175px;
+  }
+}
+
+.newForm button {
+  margin-top: 5vh;
+  background: #000;
+  color: #fff;
+  border: none;
+  margin-bottom: 5vh;
 }
 
 .navLinks {

@@ -51,39 +51,53 @@
 }
 </script> -->
 <body>
-	<div class="row text-center">
-    <h2>Want to be apart of Holly Poppy?</h2>
-    <h3>Fill out the form below</h3>
-<form action="/users" method="POST">
-	<label>First Name:
-	  <input type="text" name="FirstName">
-	</label><br>
-	<label>Last Name:
-	  <input type="text" name="LastName">
-	</label><br>
-	<label>Company:
-	  <input id="Company" type="text" name="Company">
-	</label><br>
-	<label>Address:
-	  <input id="Address" type="text" name="Address">
-	</label><br>
-	<label>City:
-		<input id="City" type="text" name="City">
-	</label><br>
-	<label>State:
-		<input type="text" name="State">
-	</label><br>
-	<label>Zip Code:
-		<input type="number" name="Zip">
-	</label><br>
-	<label>Phone Number:
-		<input type="number" name="Phone">
-	</label><small>Format: 3034567890</small><br>
-	<label>Website URL:
-		<input type="text" name="Website">
-	</label><small>Format: http://www.yourwebsite.com</small><br>
-	<button type="submit">Submit</button> 
-</form>
-</div>
+	<div class="row newForm">
+	    <h2>Want to be a part of Holly Poppy?</h2>
+	    <h3>Fill out the form below</h3>
+			<form action="/users" method="POST">
+				<div class="row">
+					<div class="col-md"></div>
+					<div class="col-md col01">
+						<label>First Name:
+						  <input type="text" name="FirstName">
+						</label><br>
+						<label>Last Name:
+						  <input type="text" name="LastName">
+						</label><br>
+						<label>Company:
+						  <input id="Company" type="text" name="Company">
+						</label><br>
+						<label>Address:
+						  <input id="Address" type="text" name="Address">
+						</label><br>
+						<label>City:
+							<input id="City" type="text" name="City">
+						</label><br>
+					</div>
+					<div class="col-md col02">
+						<label>State:
+							<input type="text" name="State">
+						</label><br>
+						<label>Zip Code:
+							<input type="number" name="Zip">
+						</label><br>
+						<label>Phone:
+							<input type="number" name="Phone" placeholder="3035555555">
+						</label><br>
+						<label>Website URL:
+							<input type="text" name="Website" placeholder="http://www.yourwebsite.com">
+						</label><br>
+					</div>
+					<div class="col-md"></div>
+				</div>
+				<button type="submit">Submit</button> 
+			</form>
+	</div>
+
+	<footer class="footer text-faded text-center py-5">
+    <div class="container">
+      <p class="m-0 small">Website Design & Development by Digital Dash</p>
+    </div>
+  </footer>
 </body>
 </html>
