@@ -4,17 +4,17 @@
 
 {% block content %}
 <div class="sign-up">
-  <label class="sign-up-product">
+  <h2 class="sign-up-product text-center">
     {{ product.name }}
-  </label>
-  <h2>Sign up for {{ plan.name }} &mdash; {{ plan.amount }} /
+  </h2>
+  <h3 class="text-center">Sign up for {{ plan.name }} &mdash; {{ plan.amount }} /
     {% if (plan.interval_count > 1) %} 
       {{ plan.interval_count }} {{ plan.interval }}s
       
     {% else %}
       {{ plan.interval }}
     {% endif %}
-  </h2> 
+  </h3> 
   {% if success %}
   <div>
     <script>
@@ -23,10 +23,24 @@
            window.location = "/new";
         }, 5000)
       </script>
-    <p>Your payment was successful. Congrats, you've successfully signed up! </p>
+  <section class="page-section cta">
+    <div class="container">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+    <h2>Your payment was successful. Congrats, you've successfully signed up! </h2>
+    </section>
+        </div>
+      </div>
+    </div>
   </div>
   {% elif error %}
   <div>
+    <script>
+      setTimeout(function () {
+         // after 2 seconds
+         window.location = "/signUp";
+      }, 5000)
+    </script>
     <p>Your payment was unsuccessful. Please try again.</p>
   </div>
   {% else %}
@@ -38,12 +52,11 @@
       <input type="hidden" value="{{ plan.name }}" name="planName"/>
       <input type="hidden" value="{{ plan.interval }}" name="planInterval"/>
       <input type="hidden" value="{{ plan.interval_count }}" name="planIntervalCount"/>
-
       <label>
         Email Address
       </label>
       <input placeholder="Your Email Address" name="customerEmail"/>
-      <div class="form-row">
+      <div>
         <label for="card-element">
           Credit or debit card
         </label>

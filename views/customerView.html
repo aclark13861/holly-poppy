@@ -19,7 +19,9 @@
           <input type="hidden" value="{{ plan.amount }}" name="planAmount"/>
           <input type="hidden" value="{{ plan.interval }}" name="planInterval"/>
           <input type="hidden" value="{{ plan.interval_count }}" name="planIntervalCount"/>
-          <h3>A subscription provides you with marketing and adverstising for your business, as well as a spot on our websites map. <br> &mdash; {{ plan.amount }} / 
+          <h3 style="all: unset;font-family: cursive;font-weight: bold;font-size:x-large;">Let's get poppin'! $40/month to be a part of our movement against mass corporations...<br>
+            Your subscription gets you professional photos for your own marketing purposes, exposure in our ads, and a spot at our collaborative events. Sign up to be a part of what's poppin'!
+            <br> &mdash; {{ plan.amount }} / 
             {% if (plan.interval_count > 1) %} 
               {{ plan.interval_count }} {{ plan.interval }}s
             
@@ -27,7 +29,7 @@
               {{ plan.interval }}
             {% endif %}
           </h3>
-          <input class="btn" type="submit" value="Sign Up"/>
+          <input style="margin-left: .5vw;" class="btn" type="submit" value="Sign Up"/>
         </form>
       </div>
       {% endfor %}

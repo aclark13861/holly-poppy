@@ -20,6 +20,7 @@
     
       gtag('config', 'G-E740VX908N');
     </script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
     <body>
         <div class="menu">
@@ -64,6 +65,7 @@
                     <label for="enquiry">Message To Holly Poppy</label>
                         <textarea class="form-control" id="enquiry" name="enquiry" rows="6"></textarea>
                     </div>
+                    <div class="g-recaptcha" data-sitekey="6Le8zAcaAAAAAIsw424ZRpN7pVmn-K5vz7R0A_d4"></div>
                     <div class="float-right form-button"> <!-- align button to the right -->
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </div>
@@ -73,11 +75,19 @@
                 <p></p>
             </div>
         </div>
-
         <footer class="footer text-faded text-center py-5">
           <div class="container">
             <p class="m-0 small">Website Design & Development by Digital Dash</p>
           </div>
         </footer>
+        <script>
+        $("form").submit(function(event) {
+            var recaptcha = $("#g-recaptcha-response").val();
+            if (recaptcha === "") {
+               event.preventDefault();
+               alert("Please check the recaptcha");
+            }
+         });
+    </script>
     </body>
 </html>
