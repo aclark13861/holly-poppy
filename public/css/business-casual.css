@@ -1,11 +1,15 @@
-html{
+html {
   overflow-x: hidden !important;
   margin-right: -5px !important;
 }
 
 body {
-  font-family: 'Lora';
-  background-image: linear-gradient(rgba(208, 153, 226, 0.65), rgba(208, 153, 226, 0.5)), url("/img/poppy.jpg");
+  font-family: "Lora";
+  background-image: linear-gradient(
+      rgba(208, 153, 226, 0.65),
+      rgba(208, 153, 226, 0.5)
+    ),
+    url("/img/poppy.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -88,7 +92,7 @@ p {
   font-family: p22-klauss-kursiv, cursive;
   font-weight: 800;
   font-style: normal;
-  opacity: .75;
+  opacity: 0.75;
   color: #000;
   font-family: p22-klauss-kursiv, cursive;
   font-weight: 800;
@@ -106,7 +110,7 @@ p {
   font-weight: 100;
   line-height: 4rem;
   color: #000;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 @media screen and (max-width: 1240px) {
@@ -335,7 +339,8 @@ p {
   }
 }
 
-.nav-tgl > span:before, .nav-tgl > span:after {
+.nav-tgl > span:before,
+.nav-tgl > span:after {
   display: inline-block;
   position: absolute;
   content: "";
@@ -377,7 +382,8 @@ p {
   outline: none;
 }
 
-.nav-tgl:hover > span:after, .nav-tgl:hover > span:before {
+.nav-tgl:hover > span:after,
+.nav-tgl:hover > span:before {
   width: 34px;
   left: 0;
 }
@@ -390,7 +396,7 @@ p {
   top: 0;
   left: 0;
   z-index: 100;
-  content: '';
+  content: "";
   width: 100vw;
   height: 100vw;
   transition: all 700ms ease-in-out;
@@ -424,7 +430,7 @@ p {
 .menu.active .navLinks {
   visibility: visible;
   display: block !important;
-  background: #E8BFFB;
+  background: #e8bffb;
   position: fixed !important;
   top: 12vh;
   left: 34.5vw;
@@ -487,14 +493,16 @@ p {
   height: 0;
 }
 
-.menu.active .nav-tgl > span:after, .menu.active .nav-tgl > span:before {
+.menu.active .nav-tgl > span:after,
+.menu.active .nav-tgl > span:before {
   top: 0px;
   left: 0;
   width: 34px;
 }
 
 @media screen and (max-width: 768px) {
-  .menu.active .nav-tgl > span:after, .menu.active .nav-tgl > span:before {
+  .menu.active .nav-tgl > span:after,
+  .menu.active .nav-tgl > span:before {
     top: -2px;
     width: 20px;
   }
@@ -515,7 +523,7 @@ p {
   z-index: 999;
   top: 50vh;
   left: 50vw;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 @media screen and (max-width: 1440px) {
@@ -600,13 +608,13 @@ p {
 }
 
 .intro .hero-bg {
-  background: linear-gradient(45deg, #F2A5E8, #fff);
+  background: linear-gradient(45deg, #f2a5e8, #fff);
   height: 90%;
   width: 90%;
   position: absolute;
   top: 14%;
   border-radius: 5px;
-  border: 2px solid #D099E2;
+  border: 2px solid #d099e2;
   padding-left: 2rem;
   margin-left: -1rem;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.65);
@@ -680,7 +688,7 @@ p {
 @media screen and (max-width: 990px) {
   .intro .intro-text p {
     width: 125%;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -800,7 +808,7 @@ p {
     font-weight: 800;
     font-style: normal;
     font-size: 4.5rem;
-    opacity: .8;
+    opacity: 0.8;
   }
 }
 
@@ -863,7 +871,7 @@ p {
 
 .cta .cta-inner:before {
   border-radius: 0.5rem;
-  content: '';
+  content: "";
   position: absolute;
   top: -0.5rem;
   bottom: -0.5rem;
@@ -921,14 +929,14 @@ p {
 
 .list-hours .list-hours-item {
   border-bottom: 1px solid rgba(204, 220, 253, 0.5);
-  padding-bottom: .25rem;
+  padding-bottom: 0.25rem;
   margin-bottom: 1rem;
   font-style: italic;
 }
 
 .list-hours .list-hours-item.today {
   font-weight: bold;
-  color: #CCDCFD;
+  color: #ccdcfd;
 }
 
 @media (min-width: 992px) {
@@ -947,11 +955,11 @@ p {
 }
 
 .text-primary {
-  color: #CCDCFD !important;
+  color: #ccdcfd !important;
 }
 
 .bg-primary {
-  background-color: #CCDCFD !important;
+  background-color: #ccdcfd !important;
 }
 
 .btn {
@@ -959,11 +967,13 @@ p {
 }
 
 .btn-primary {
-  background-color: #CCDCFD;
-  border-color: #CCDCFD;
+  background-color: #ccdcfd;
+  border-color: #ccdcfd;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
   background-color: #9bbafb;
   border-color: #9bbafb;
 }
